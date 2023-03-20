@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/38d3705306.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Lista de tareas</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de tareas</h1>
+
+        <div>
+            <form>
+                <input type="text" class="tarea" placeholder="Agrega tu tarea, arrastra para ordenarlas.">
+                <button class="btn-add">+</button>
+            </form>
+
+            <div class="li-container">
+                <h4>Para hacer</h4>
+                <ul class="paraHacer">
+
+                </ul>
+
+                <h4>En progreso</h4>
+                <div class="etapaDos">
+                    <ul class="enProgreso">
+
+                    </ul>
+                </div>
+
+                <h4>Finalizadas</h4>
+                <div class="etapaTres">
+                    <ul class="finalizadas">
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
