@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    background-color: #304B5F;
+    background-image: linear-gradient(to right, rgb(40, 106, 181) , rgb(27, 34, 74));
     color: #304B5F;
 }
 
@@ -135,18 +135,32 @@ ul {
 
 .completadas {
     background-color: #deffcf;
-    /* display: flex; */
     border-radius: 3px;
     padding: 5px 10px;
     margin-bottom: 8px;
     align-items: center;
-
-
 }
 
 h4 {
     text-align: center;
     color: #304B5F;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#paraHacer {
+    background-color: whitesmoke;
+    border: solid 1px rgb(236, 228, 228);
+}
+
+#enProgreso {
+    background-color: #fff6ed;
+    border: solid 1px #e8e1d9;
+}
+
+#finalizadas {
+    background-color: #f1fbea;
+    border: solid 1px #e5edde;
 }
 
 @media only screen and (max-width: 992px) {
