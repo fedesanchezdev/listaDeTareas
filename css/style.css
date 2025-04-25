@@ -1,182 +1,192 @@
+:root {
+    --color-primary: #304B5F;
+    --color-in-progress: #e18235;
+    --color-done: #245522;
+    --color-text-light: #fff;
+    --gradient-bg: linear-gradient(to right, rgb(40, 106, 181), rgb(27, 34, 74));
+}
+
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    background-image: linear-gradient(to right, rgb(40, 106, 181) , rgb(27, 34, 74));
-    color: #304B5F;
+    background: var(--gradient-bg);
+    color: var(--color-primary);
+    min-height: 100vh;
 }
 
 .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px auto;
     width: 30%;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #fff;
-    padding: 60px 25px 40px 25px;
+    padding: 60px 25px 40px;
     border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    color: #304B5F;
+    color: var(--color-primary);
+    margin-bottom: 30px;
 }
 
 form {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .tarea {
     padding: 15px 10px;
     width: 100%;
-    outline: solid 1px #304B5F;
+    outline: 1px solid var(--color-primary);
     border-radius: 5px 0 0 5px;
     border: none;
     font-size: 1rem;
+    transition: outline 0.3s ease;
+}
+
+.tarea:focus {
+    outline: 2px solid var(--color-primary);
 }
 
 .btn-add {
     padding: 5px 15px;
-    color: white;
-    outline: solid 1px #304B5F;
-    font-family: fantasy;
-    background-color: #304B5F;
+    color: var(--color-text-light);
+    outline: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
     font-size: 1.5rem;
     border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.paraHacer
-.enProgreso
+.btn-add:hover {
+    background-color: #1d3447;
+}
+
+/* Listas comunes */
+.paraHacer,
+.enProgreso,
 .finalizadas {
     margin: 0 auto;
     width: 98%;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.paraHacer .item {
-    background-color: #304B5F;
-    color: #fff;
+/* Items comunes */
+.item {
     display: flex;
     border-radius: 3px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     margin-bottom: 8px;
     align-items: center;
     justify-content: space-between;
     text-align: left;
+    transition: transform 0.2s ease;
 }
 
-.paraHacer .item .text {
+.item:hover {
+    transform: translateX(5px);
+}
+
+.item .text {
     font-size: 18px;
     margin: 0;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+.item .btn-delete {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.item .btn-delete:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos específicos por lista */
+.paraHacer .item {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
 }
 
 .enProgreso .item {
-    background-color: #e18235;
-    color: #fff;
-    display: flex;
-    border-radius: 3px;
-    padding: 5px 10px;
-    margin-bottom: 8px;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-}
-
-.enProgreso .item .text {
-    font-size: 18px;
-    margin: 0;
-    margin-left: 15px;
-}
-
-.enProgreso .item .btn-delete {
-    display: none;
+    background-color: var(--color-in-progress);
+    color: var(--color-text-light);
 }
 
 .finalizadas .item {
-    background-color: #245522;
-    color: #fff;
-    display: flex;
-    border-radius: 3px;
-    padding: 5px 10px;
-    margin-bottom: 8px;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
+    background-color: var(--color-done);
+    color: var(--color-text-light);
 }
 
-.finalizadas .item .text {
-    font-size: 18px;
-    margin: 0;
-    margin-left: 15px;
-}
-
-.finalizadas .item .btn-delete {
-    display: none;
-}
-
-li {
-    list-style: none;
-    background-color: #304B5F;
-    border-radius: 3px;
-    margin-top: 15px;
-    display: flex;
-}
-
-ul {
-    padding: 0;
-}
-
-
-
-.fas {
+/* Icono de arrastre */
+.fas.fa-bars {
     cursor: move;
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.completadas {
-    background-color: #deffcf;
-    border-radius: 3px;
-    padding: 5px 10px;
-    margin-bottom: 8px;
-    align-items: center;
-}
-
+/* Encabezados de sección */
 h4 {
     text-align: center;
-    color: #304B5F;
-    padding: 5px;
+    color: var(--color-primary);
+    padding: 8px;
     border-radius: 3px;
+    margin-top: 0;
 }
 
 #paraHacer {
     background-color: whitesmoke;
-    border: solid 1px rgb(236, 228, 228);
+    border: 1px solid #ececec;
 }
 
 #enProgreso {
     background-color: #fff6ed;
-    border: solid 1px #e8e1d9;
+    border: 1px solid #f0e6d8;
 }
 
 #finalizadas {
     background-color: #f1fbea;
-    border: solid 1px #e5edde;
+    border: 1px solid #e0ebd9;
 }
 
-@media only screen and (max-width: 992px) {
+/* Responsive */
+@media only screen and (max-width: 1200px) {
     .container {
-        width: 40%;
-        }
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .container {
-        width: 60%;
-        }
+        width: 70%;
+        padding: 40px 15px;
+    }
 }
 
 @media only screen and (max-width: 576px) {
     .container {
-        width: 80%;
-        }
+        width: 90%;
+        padding: 30px 10px;
+    }
+
+    .item {
+        padding: 8px 12px;
+    }
+
+    .item .text {
+        font-size: 16px;
+    }
 }
